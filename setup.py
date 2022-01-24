@@ -27,7 +27,9 @@ setup(
 
     packages=find_packages(exclude=('tests',)),
 
-    install_requires=[],
+    install_requires=[
+        "six"
+    ],
 
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',

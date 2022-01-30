@@ -12,6 +12,7 @@ STAC_SERVERS = {
 }
 CREDENTIAL_PATH = "~/.config/easystac/"
 
+
 def get_credentials_path(stac_server: str = "radiant"):
     """Returns the path to the credentials file"""
     path_name = "%s/credentials_%s.json" % (CREDENTIAL_PATH, stac_server)

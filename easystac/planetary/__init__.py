@@ -1,8 +1,8 @@
 """easystac - Planetary Computer authentication"""
 import json
 import os
-from pathlib import Path
 import warnings
+from pathlib import Path
 
 from ..logging_utils import obtain_and_write_token
 
@@ -26,9 +26,9 @@ def Initialize():
         os.environ["PC_SDK_SUBSCRIPTION_KEY"] = credential["token"]
     else:
         warnings.warn(
-            "PC_SDK_SUBSCRIPTION_KEY is not set. " + 
-            "If you are a registered user," + 
-            " it is recommended to set your token for a more favorable rate limiting." + 
-            " More info in https://planetarycomputer.microsoft.com/docs/concepts/sas/",
-            UserWarning
+            "PC_SDK_SUBSCRIPTION_KEY is not set. "
+            + "If you are a registered user,"
+            + " it is recommended to set your token for a more favorable rate limiting."
+            + " More info in https://planetarycomputer.microsoft.com/docs/concepts/sas/",
+            UserWarning,
         )

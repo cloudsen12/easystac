@@ -1,4 +1,4 @@
-"""easystac - RadiantML authentification"""
+"""easystac - RadiantML authentication"""
 import json
 import os
 from pathlib import Path

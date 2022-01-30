@@ -1,0 +1,34 @@
+"""easystac - Planetary Computer authentication"""
+import json
+import os
+from pathlib import Path
+import warnings
+
+from ..logging_utils import obtain_and_write_token
+
+warnings.simplefilter("always", UserWarning)
+
+CREDENTIAL_FILE = "~/.config/easystac/credentials_planetary.json"
+
+
+def Authenticate(token=None):
+    if token is None:
+        obtain_and_write_token(stac_server="pc")
+    else:
+        obtain_and_write_token(token, stac_server="pc")
+
+
+def Initialize():
+    """Initialize the package"""
+    credentials_path = Path(CREDENTIAL_FILE).expanduser()
+    if credentials_path.is_file():
+        credential = json.load(open(credentials_path))
+        os.environ["PC_SDK_SUBSCRIPTION_KEY"] = credential["token"]
+    else:
+        warnings.warn(
+            "PC_SDK_SUBSCRIPTION_KEY is not set. " + 
+            "If you are a registered user," + 
+            " it is recommended to set your token for a more favorable rate limiting." + 
+            " More info in https://planetarycomputer.microsoft.com/docs/concepts/sas/",
+            UserWarning
+        )

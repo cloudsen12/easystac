@@ -40,10 +40,11 @@ def write_token(refresh_token: str, stac_server: str = "radiant"):
 
 
 def get_authorization_url(stac_server="pc"):
-    if stac_server == "pc":
-        return "https://mlhub.earth/profile" # TODO CHANGE BY PLANETARY
-    elif stac_server == "radiant":
-        return "https://mlhub.earth/profile"
+    urls = {
+        "pc": "https://pccompute.westeurope.cloudapp.azure.com/compute/hub/token",
+        "radiant": "https://mlhub.earth/profile",
+    }
+    return urls[stac_server]
 
 
 def obtain_and_write_token(token=None, stac_server: str = "radiant"):
@@ -65,33 +66,31 @@ def display_auth_instructions(stac_server="radiant"):
     if stac_server == "radiant":
         main_message = "To authorize access needed by %s, %s" % (
             ss_name,
-            display_auth_instructions_radiant(),
+            display_auth_instructions_radiant(get_authorization_url(stac_server)),
         )
         print(main_message)
     elif stac_server == "pc":
         main_message = "To authorize access needed by %s, %s" % (
             ss_name,
-            display_auth_instructions_radiant(),
+            display_auth_instructions_planetary(get_authorization_url(stac_server)),
         )
         print(main_message)
     return False
 
 
-def display_auth_instructions_planetary():
-    radiant_url = "https://mlhub.earth/profile"
+def display_auth_instructions_planetary(url):
     return (
         "open the following URL: %s in your web browser. "
-        % colored(radiant_url, attrs=["bold"])
-        + "An API key is required to access the Radiant MLHub API "
+        % colored(url, attrs=["bold"])
+        + "An API key is required to have a more favorable rate limiting in Planetary Computer "
         + ", so please copy and paste it below."
     )
 
 
-def display_auth_instructions_radiant():
-    radiant_url = "https://mlhub.earth/profile"
+def display_auth_instructions_radiant(url):
     return (
         "open the following URL: %s in your web browser. "
-        % colored(radiant_url, attrs=["bold"])
+        % colored(url, attrs=["bold"])
         + "An API key is required to access the Radiant MLHub API "
         + ", so please copy and paste it below."
     )

@@ -22,7 +22,7 @@ setup(
     description="A Python package for simple STAC queries",
     long_description=read("README.md"),
     packages=find_packages(exclude=("tests",)),
-    install_requires=["six"],
+    install_requires=["six", "stackstac", "termcolor"],
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "License :: OSI Approved :: MIT License",

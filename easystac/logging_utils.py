@@ -42,7 +42,7 @@ def write_token(refresh_token: str, stac_server: str = "radiant"):
 
 def get_authorization_url(stac_server="pc"):
     urls = {
-        "pc": "https://pccompute.westeurope.cloudapp.azure.com/compute/hub/token",
+        "pc": "http://planetarycomputer.microsoft.com/compute/hub/token",
         "radiant": "https://mlhub.earth/profile",
     }
     return urls[stac_server]

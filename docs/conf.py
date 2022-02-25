@@ -63,7 +63,7 @@ html_theme = "sphinx_material"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
-html_logo = "_static/easystac.png"
+# html_logo = "_static/easystac.png"
 
 # Material things
 html_theme_options = {

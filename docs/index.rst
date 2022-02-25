@@ -62,7 +62,7 @@ however, only Google Earth Engine provides a fully easy API that is transparent 
 
 :code:`easystac` is a Python package that provides clients from Planetary Computer and Radiant ML Hub
 with an easy API that is transparent for them, implementing Google Earth Engine-like methods
-and classes to query, explore and convert STAC assets to `:code:`xarray` <https://docs.xarray.dev/en/stable/>`_ objects.
+and classes to query, explore and convert STAC assets to `xarray <https://docs.xarray.dev/en/stable/>`_ objects.
 
 Some of the :code:`easystac` features are listed here:
 

@@ -1,20 +1,126 @@
-.. easystac documentation master file, created by
-   sphinx-quickstart on Fri Jan 21 20:47:07 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+easystac
+========
 
-Welcome to easystac's documentation!
-====================================
+.. raw:: html
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   <embed>
+      <p align="center">
+      <a href="https://github.com/cloudsen12/easystac"><img src="https://raw.githubusercontent.com/cloudsen12/easystac/main/docs/_static/easystac.png" alt="easystac"></a>
+      </p>
+      <p align="center">
+         <em>A Python package for simple STAC queries</em>
+      </p>
+
+      <p align="center">
+      <a href='https://pypi.python.org/pypi/easystac'>
+         <img src='https://img.shields.io/pypi/v/easystac.svg' alt='PyPI' />
+      </a>
+      <a href='https://anaconda.org/conda-forge/easystac'>
+         <img src='https://img.shields.io/conda/vn/conda-forge/easystac.svg' alt='conda-forge' />
+      </a>
+      <a href='https://easystac.readthedocs.io/en/latest/?badge=latest'>
+         <img src='https://readthedocs.org/projects/easystac/badge/?version=latest' alt='Documentation Status' />
+      </a>
+      <a href="https://github.com/cloudsen12/easystac/actions/workflows/tests.yml" target="_blank">
+         <img src="https://github.com/cloudsen12/easystac/actions/workflows/tests.yml/badge.svg" alt="Tests">
+      </a>
+      <a href="https://opensource.org/licenses/MIT" target="_blank">
+         <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License">
+      </a>
+      <a href="https://github.com/sponsors/davemlz" target="_blank">
+         <img src="https://img.shields.io/badge/GitHub%20Sponsors-Donate-ff69b4.svg" alt="GitHub Sponsors">
+      </a>
+      <a href="https://www.buymeacoffee.com/davemlz" target="_blank">
+         <img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-Donate-ff69b4.svg" alt="Buy me a coffee">
+      </a>
+      <a href="https://ko-fi.com/davemlz" target="_blank">
+         <img src="https://img.shields.io/badge/kofi-Donate-ff69b4.svg" alt="Ko-fi">
+      </a>
+      <a href="https://twitter.com/dmlmont" target="_blank">
+         <img src="https://img.shields.io/twitter/follow/dmlmont?style=social" alt="Twitter">
+      </a>
+      <a href="https://twitter.com/csaybar" target="_blank">
+         <img src="https://img.shields.io/twitter/follow/csaybar?style=social" alt="Twitter">
+      </a>
+      <a href="https://github.com/psf/black" target="_blank">
+         <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Black">
+      </a>
+      <a href="https://pycqa.github.io/isort/" target="_blank">
+         <img src="https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336" alt="isort">
+      </a>
+      </p>
+   </embed>
+
+Overview
+--------
+
+`SpatioTemporal Asset Catalogs (STAC) <https://stacspec.org/>`_ provide a standardized format that describes
+geospatial information. Multiple platforms are using this standard to provide clients several datasets.
+Platforms such as `Planetary Computer <https://planetarycomputer.microsoft.com/>`_,
+`Radiant ML Hub <https://mlhub.earth/>`_ and `Google Earth Engine <https://earthengine.google.com/>`_ use this standard,
+however, only Google Earth Engine provides a fully easy API that is transparent for clients.
+
+:code:`easystac` is a Python package that provides clients from Planetary Computer and Radiant ML Hub
+with an easy API that is transparent for them, implementing Google Earth Engine-like methods
+and classes to query, explore and convert STAC assets to `:code:`xarray` <https://docs.xarray.dev/en/stable/>`_ objects.
+
+Some of the :code:`easystac` features are listed here:
+
+- Simple authentication for Planetary Computer and Radiant ML Hub.
+- Access to STAC collections from Planetary Computer and Radiant ML Hub.
+- Earth Engine-like classes such as ImageCollection, including filtering methods.
+- Compatibility with xarray.
+
+Check the simple usage of `easystac` here:
+
+.. code-block:: python
+
+   import easystac.planetary as pc
+   from geojson import Point
+
+   pc.Authenticate()
+   pc.Initialize()
+
+   geom = Point([-76.1,4.3])
+
+   S2 = (pc.ImageCollection("sentinel-2-l2a")
+      .filterBounds(geom)
+      .filterDate("2020-01-01","2021-01-01")
+      .getInfo(resolution = 10))
 
 
+Installation
+------------
 
-Indices and tables
-==================
+Install the latest version from PyPI:
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. code-block::   
+
+   pip install easystac
+
+
+Upgrade `easystac` by running:
+
+.. code-block::   
+
+   pip install -U easystac
+
+
+Install the latest version from conda-forge:
+
+.. code-block::   
+
+   conda install -c conda-forge easystac
+
+
+Install the latest dev version from GitHub by running:
+
+.. code-block::   
+
+   pip install git+https://github.com/cloudsen12/easystac
+
+
+License
+-------
+
+The project is licensed under the MIT license.

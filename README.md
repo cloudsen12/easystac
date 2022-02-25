@@ -33,6 +33,9 @@
 <a href="https://twitter.com/dmlmont" target="_blank">
     <img src="https://img.shields.io/twitter/follow/dmlmont?style=social" alt="Twitter">
 </a>
+<a href="https://twitter.com/csaybar" target="_blank">
+    <img src="https://img.shields.io/twitter/follow/csaybar?style=social" alt="Twitter">
+</a>
 <a href="https://github.com/psf/black" target="_blank">
     <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Black">
 </a>

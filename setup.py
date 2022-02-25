@@ -15,12 +15,13 @@ def read(filename):
 setup(
     name="easystac",
     version="0.0.1",
-    url="https://github.com/davemlz/easystac",
+    url="https://github.com/cloudsen12/easystac",
     license="MIT",
     author="David Montero Loaiza and Cesar Aybar Camacho",
     author_email="dml.mont@gmail.com",
     description="A Python package for simple STAC queries",
     long_description=read("README.md"),
+    long_description_content_type="text/markdown",
     packages=find_packages(exclude=("tests",)),
     install_requires=[
         "planetary_computer",

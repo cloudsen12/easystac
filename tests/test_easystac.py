@@ -1,3 +1,5 @@
+import unittest
+
 import xarray as xr
 from geojson import Point
 

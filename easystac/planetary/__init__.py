@@ -5,7 +5,6 @@ import warnings
 from pathlib import Path
 
 from ..logging_utils import obtain_and_write_token
-
 from .image_collection import ImageCollection
 
 warnings.simplefilter("always", UserWarning)
@@ -34,5 +33,3 @@ def Initialize():
             + " More info in https://planetarycomputer.microsoft.com/docs/concepts/sas/",
             UserWarning,
         )
-
-

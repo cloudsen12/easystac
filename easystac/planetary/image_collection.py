@@ -3,12 +3,13 @@ import os
 import warnings
 from pathlib import Path
 
-import stackstac
 import planetary_computer as pc
+import stackstac
 
 from ..base import BaseImageCollection
 
 warnings.simplefilter("always", UserWarning)
+
 
 class ImageCollection(BaseImageCollection):
     """ImageCollection object for Planetary Computer.

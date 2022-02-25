@@ -6,7 +6,6 @@ from pathlib import Path
 import stackstac
 
 from ..logging_utils import obtain_and_write_token
-
 from .image_collection import ImageCollection
 
 CREDENTIAL_FILE = "~/.config/easystac/credentials_radiant.json"
@@ -31,5 +30,3 @@ def Initialize():
             "running:: \n\n>>> import easystac.radiant as rd\n"
             ">>> rd.Authenticate()\n"
         )
-
-

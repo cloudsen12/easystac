@@ -28,7 +28,7 @@ setup(
         "pystac_client",
         "radiant_mlhub",
         "six",
-        "stackstac>=0.3.1",
+        "stackstac==0.3.1",
         "termcolor",
     ],
     classifiers=[

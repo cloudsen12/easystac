@@ -12,6 +12,13 @@ CREDENTIAL_FILE = "~/.config/easystac/credentials_radiant.json"
 
 
 def Authenticate(token=None):
+    """Generates an authentication prompt to Radiant ML Hub.
+
+    Examples
+    --------
+    >>> import easystac.radiant as rd
+    >>> rd.Authenticate()
+    """
     if token is None:
         obtain_and_write_token(stac_server="radiant")
     else:
@@ -19,7 +26,13 @@ def Authenticate(token=None):
 
 
 def Initialize():
-    """Initialize the package"""
+    """Initializes the authentication process for Radiant ML Hub.
+
+    Examples
+    --------
+    >>> import easystac.radiant as rd
+    >>> rd.Initialize()
+    """
     credentials_path = Path(CREDENTIAL_FILE).expanduser()
     if credentials_path.is_file():
         credential = json.load(open(credentials_path))

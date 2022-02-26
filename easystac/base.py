@@ -31,8 +31,13 @@ class BaseImageCollection:
         """Initializes the BaseImageCollection object."""
 
         self.collection = collection
+        """Collection ID."""
+
         self.datetime = None
+        """Datetime string used to search items."""
+
         self.geometry = None
+        """GeoJSON geometry used to search items."""
 
     def filterDate(self, initialDate, finalDate):
         """Initializes the initial and final date for datetime filtering.
@@ -162,6 +167,7 @@ class ImageCollection(BaseImageCollection):
         >>>     .fromSTAC("https://cmr.earthdata.nasa.gov/stac/LPCLOUD/")
         """
         self.stac = url
+        """STAC url used to search items."""
 
         return self
 

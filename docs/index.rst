@@ -101,6 +101,8 @@ Check the simple usage of `easystac` here:
       .filterDate("2021-01-01","2022-01-01")
       .getInfo(epsg = 4326,resolution = 0.0001,assets = ["B02","B03","B04"]))
 
+In the case of specialized STAC objects, we have created special modules for Planetary Computer:
+
 .. code-block:: python
 
    import easystac.planetary as pc
@@ -115,6 +117,8 @@ Check the simple usage of `easystac` here:
       .filterBounds(geom)
       .filterDate("2020-01-01","2021-01-01")
       .getInfo(resolution = 10))
+
+This principle applies also for Radiant ML Hub.
 
 .. code-block:: python
 

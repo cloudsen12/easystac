@@ -5,8 +5,7 @@ from geojson import Point
 
 import easystac.planetary as pc
 
-
-geom = Point([-76.1,4.3])
+geom = Point([-76.1, 4.3])
 
 
 class Test(unittest.TestCase):

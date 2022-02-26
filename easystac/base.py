@@ -1,6 +1,5 @@
-from pystac_client import Client
-
 import stackstac
+from pystac_client import Client
 
 
 class BaseImageCollection:

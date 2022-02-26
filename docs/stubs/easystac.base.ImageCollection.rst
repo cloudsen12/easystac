@@ -4,15 +4,6 @@ easystac.base.ImageCollection
 .. currentmodule:: easystac.base
 
 .. autoclass:: ImageCollection
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~ImageCollection.collection
-      ~ImageCollection.datetime
-      ~ImageCollection.geometry
-      ~ImageCollection.stac
 
    .. rubric:: Methods
 

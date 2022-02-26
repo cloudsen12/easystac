@@ -66,7 +66,7 @@ Platforms such as `Planetary Computer <https://planetarycomputer.microsoft.com/>
 `Radiant ML Hub <https://mlhub.earth/>`_ and `Google Earth Engine <https://earthengine.google.com/>`_ use this standard,
 however, only Google Earth Engine provides a fully easy API that is transparent for clients.
 
-:code:`easystac` is a Python package that provides clients from Planetary Computer and Radiant ML Hub
+:code:`easystac` is a Python package that provides users of STAC objects as well as clients from Planetary Computer and Radiant ML Hub
 with an easy API that is transparent for them, implementing Google Earth Engine-like methods
 and classes to query, explore and convert STAC assets to `xarray <https://docs.xarray.dev/en/stable/>`_ objects.
 

@@ -3,6 +3,7 @@
    :hidden:
 
    reference
+   contributing
 
 easystac
 ========

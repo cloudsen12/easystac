@@ -11,9 +11,6 @@ Contributions to easystac are welcome! Here you will find how to do it:
 
 - **Documentation:** You can add examples, notes and references to the easystac documentation by using the NumPy Docstrings of the easystac documentation, or by creating blogs, tutorials or papers.
 
-Steps
-~~~~~
-
 First, fork the `easystac <https://github.com/cloudsen12/easystac>`_ repository and clone it to your local machine. Then, create a development branch::
 
    git checkout -b name-of-dev-branch

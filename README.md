@@ -78,6 +78,30 @@ Some of the `easystac` features are listed here:
 Check the simple usage of `easystac` here:
 
 ```python
+import easystac as es
+from geojson import Polygon
+
+geom = Polygon([
+        [
+            [-122.1553, 38.7578],
+            [-121.8321, 39.7444],
+            [-123.0002, 39.7503],
+            [-123.0002, 38.7609],
+            [-122.1553, 38.7578]
+        ]
+    ]
+)
+
+HLSS30 = (es.ImageCollection("HLSS30.v2.0")
+    .fromSTAC("https://cmr.earthdata.nasa.gov/stac/LPCLOUD/")
+    .filterBounds(geom)
+    .filterDate("2021-01-01","2022-01-01")
+    .getInfo(epsg = 4326,resolution = 0.0001,assets = ["B02","B03","B04"]))
+```
+
+In the case of specialized STAC objects, we have created special modules for Planetary Computer:
+
+```python
 import easystac.planetary as pc
 from geojson import Point
 
@@ -90,6 +114,19 @@ S2 = (pc.ImageCollection("sentinel-2-l2a")
     .filterBounds(geom)
     .filterDate("2020-01-01","2021-01-01")
     .getInfo(resolution = 10))
+```
+
+This principle applies also for Radiant ML Hub.
+
+```python
+import easystac.radiant as rd
+
+rd.Authenticate()
+rd.Initialize()
+
+S1floods = (rd.ImageCollection("sen12floods_s1_source")
+    .filterDate("2019-01-01","2019-01-05")
+    .getInfo(epsg = 4326,resolution = 0.0001))
 ```
 
 ## Installation

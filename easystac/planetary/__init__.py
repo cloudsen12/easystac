@@ -9,7 +9,7 @@ from .image_collection import ImageCollection
 
 warnings.simplefilter("always", UserWarning)
 
-CREDENTIAL_FILE = "~/.config/easystac/credentials_planetary.json"
+CREDENTIAL_FILE = "~/.config/easystac/credentials_pc.json"
 
 
 def Authenticate(token=None):

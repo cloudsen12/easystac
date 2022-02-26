@@ -17,6 +17,16 @@ Classes and methods for using easystac with any kind of STAC objects:
 Planetary Computer
 ------------------
 
+Authentication methods:
+
+.. currentmodule:: easystac.planetary
+
+.. autosummary::
+   :toctree: stubs
+
+   Authenticate
+   Initialize
+
 Classes and methods for using easystac with Planetary Computer:
 
 .. currentmodule:: easystac.planetary.image_collection
@@ -27,6 +37,16 @@ Classes and methods for using easystac with Planetary Computer:
 
 Radiant ML Hub
 --------------
+
+Authentication methods:
+
+.. currentmodule:: easystac.radiant
+
+.. autosummary::
+   :toctree: stubs
+
+   Authenticate
+   Initialize
 
 Classes and methods for using easystac with Radiant ML Hub:
 

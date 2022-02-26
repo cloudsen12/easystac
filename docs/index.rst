@@ -3,6 +3,7 @@
    :hidden:
 
    reference
+   tutorials
    contributing
 
 easystac

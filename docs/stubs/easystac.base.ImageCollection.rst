@@ -1,5 +1,5 @@
 easystac.base.ImageCollection
-===================================================
+=============================
 
 .. currentmodule:: easystac.base
 

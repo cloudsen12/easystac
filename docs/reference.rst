@@ -3,7 +3,18 @@ API Reference
 
 Here you will find all easystac classes and methods:
 
-easystac.planetary
+General STAC
+------------
+
+Classes and methods for using easystac with any kind of STAC objects:
+
+.. currentmodule:: easystac.base
+
+.. autosummary::
+
+   ImageCollection
+
+Planetary Computer
 ------------------
 
 Classes and methods for using easystac with Planetary Computer:
@@ -14,8 +25,8 @@ Classes and methods for using easystac with Planetary Computer:
 
    ImageCollection
 
-easystac.radiant
-------------------
+Radiant ML Hub
+--------------
 
 Classes and methods for using easystac with Radiant ML Hub:
 

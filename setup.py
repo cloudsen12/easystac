@@ -31,7 +31,7 @@ setup(
         "stackstac",
         "termcolor",
     ],
-    python_requires=">=3.8, <4.0",
+    python_requires=">=3.8",
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "License :: OSI Approved :: MIT License",

@@ -79,24 +79,15 @@ Check the simple usage of `easystac` here:
 
 ```python
 import easystac as es
-from geojson import Polygon
+from geojson import Point
 
-geom = Polygon([
-        [
-            [-122.1553, 38.7578],
-            [-121.8321, 39.7444],
-            [-123.0002, 39.7503],
-            [-123.0002, 38.7609],
-            [-122.1553, 38.7578]
-        ]
-    ]
-)
+geom = Point([-76.3,3.4])
 
-HLSS30 = (es.ImageCollection("HLSS30.v2.0")
-    .fromSTAC("https://cmr.earthdata.nasa.gov/stac/LPCLOUD/")
+E84_S2_L2A = (es.ImageCollection('sentinel-s2-l2a-cogs')
+    .fromSTAC('https://earth-search.aws.element84.com/v0')
     .filterBounds(geom)
     .filterDate("2021-01-01","2022-01-01")
-    .getInfo(epsg = 4326,resolution = 0.0001,assets = ["B02","B03","B04"]))
+    .getInfo(resolution = 10,assets = ["B02","B03","B04"]))
 ```
 
 In the case of specialized STAC objects, we have created special modules for Planetary Computer:
